@@ -2,7 +2,11 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   engineeringSidebar: [
-    'overview',
+    {
+      type: 'link',
+      label: 'Sashalosh Engineering',
+      href: '/',
+    },
 
     {
       type: 'category',
@@ -14,9 +18,9 @@ const sidebars: SidebarsConfig = {
           label: 'Frontend',
           collapsed: false,
           items: [
-            {type: 'link', label: 'Overview', href: '/frontend/'},
-            {type: 'link', label: 'Architecture', href: '/frontend/architecture'},
-            {type: 'link', label: 'Development', href: '/frontend/development'},
+            {type: 'doc', id: 'index', label: 'Overview'},
+            {type: 'doc', id: 'architecture', label: 'Architecture'},
+            {type: 'doc', id: 'development', label: 'Development'},
           ],
         },
 

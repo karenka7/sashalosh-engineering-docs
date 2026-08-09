@@ -1,3 +1,9 @@
+---
+id: index
+title: Overview
+slug: /
+---
+
 Sashalosh Frontend
 
 Source repository

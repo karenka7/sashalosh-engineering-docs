@@ -45,6 +45,11 @@ const config: Config = {
     [
       'classic',
       {
+        // docs: {
+        //   path: 'docs',
+        //   routeBasePath: '/',
+        //   sidebarPath: './sidebarsGlobal.ts',
+        // },
         docs: {
           path: 'docs',
           routeBasePath: '/',
@@ -52,9 +57,48 @@ const config: Config = {
         },
         blog: false,
         theme: {
-           customCss: './src/css/custom.css',
+          customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'frontend',
+        path: 'frontend',
+        routeBasePath: 'frontend',
+        sidebarPath: './sidebarsFrontend.ts',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'infrastructure',
+        path: 'infrastructure',
+        routeBasePath: 'infrastructure',
+        sidebarPath: './sidebarsInfrastructure.ts',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'bff',
+        path: 'bff',
+        routeBasePath: 'bff',
+        sidebarPath: './sidebarsBff.ts',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'backend',
+        path: 'backend',
+        routeBasePath: 'backend',
+        sidebarPath: './sidebarsBackend.ts',
+      },
     ],
   ],
 
@@ -63,58 +107,63 @@ const config: Config = {
 
     colorMode: {
       respectPrefersColorScheme: true,
-  },
-
-  navbar: {
-    title: 'Sashalosh Engineering',
-    logo: {
-      alt: 'Sashalosh Engineering Logo',
-      src: 'img/logo.svg',
     },
-    items: [
-      {
-        type: 'docSidebar',
-        sidebarId: 'docsSidebar',
-        position: 'left',
-        label: 'Documentation',
-      },
-      {
-        href: 'https://github.com/karenka7/sashalosh-engineering-docs',
-        label: 'GitHub',
-        position: 'right',
-      },
-    ],
-  },
 
-  footer: {
-    style: 'dark',
-    links: [
-      {
-        title: 'Documentation',
-        items: [
-          {
-            label: 'System Overview',
-            to: '/',
-          },
-        ],
+    navbar: {
+      title: 'Sashalosh Engineering',
+      logo: {
+        alt: 'Sashalosh Engineering Logo',
+        src: 'img/logo.svg',
       },
-      {
-        title: 'Source',
-        items: [
-          {
-            label: 'Documentation Repository',
-            href: 'https://github.com/karenka7/sashalosh-engineering-docs',
-          },
-        ],
-      },
-    ],
-    copyright: `Copyright © ${new Date().getFullYear()} Sashalosh Engineering. Built with Docusaurus.`,
-  },
+      items: [
+        // {
+        //   type: 'docSidebar',
+        //   sidebarId: 'engineeringSidebar',
+        //   position: 'left',
+        //   label: 'Documentation',
+        // },
+        {
+          to: '/',
+          label: 'Documentation',
+          position: 'left',
+        },
+        {
+          href: 'https://github.com/karenka7/sashalosh-engineering-docs',
+          label: 'GitHub',
+          position: 'right',
+        },
+      ],
+    },
 
-  prism: {
-    theme: prismThemes.github,
-    darkTheme: prismThemes.dracula,
-  },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Documentation',
+          items: [
+            {
+              label: 'System Overview',
+              to: '/',
+            },
+          ],
+        },
+        {
+          title: 'Source',
+          items: [
+            {
+              label: 'Documentation Repository',
+              href: 'https://github.com/karenka7/sashalosh-engineering-docs',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Sashalosh Engineering. Built with Docusaurus.`,
+    },
+
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
   } satisfies Preset.ThemeConfig,
 };
 

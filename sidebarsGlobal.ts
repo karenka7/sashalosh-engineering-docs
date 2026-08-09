@@ -2,8 +2,11 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   engineeringSidebar: [
-    'overview',
-
+    {
+      type: 'link',
+      label: 'Sashalosh Engineering',
+      href: '/',
+    },
     {
       type: 'category',
       label: 'Engineering Domains',
@@ -12,14 +15,19 @@ const sidebars: SidebarsConfig = {
         {
           type: 'category',
           label: 'Frontend',
-          collapsed: false,
           items: [
             {type: 'link', label: 'Overview', href: '/frontend/'},
             {type: 'link', label: 'Architecture', href: '/frontend/architecture'},
             {type: 'link', label: 'Development', href: '/frontend/development'},
+            {
+              type: 'category',
+              label: 'Tools',
+              items: [
+                {type: 'link', label: 'Overview', href: '/frontend/tools/'},
+              ],
+            },
           ],
         },
-
         {
           type: 'category',
           label: 'Infrastructure',
@@ -29,7 +37,6 @@ const sidebars: SidebarsConfig = {
             {type: 'link', label: 'Deployment', href: '/infrastructure/deployment'},
           ],
         },
-
         {
           type: 'category',
           label: 'BFF',
@@ -37,7 +44,6 @@ const sidebars: SidebarsConfig = {
             {type: 'link', label: 'Overview', href: '/bff/'},
           ],
         },
-
         {
           type: 'category',
           label: 'Backend',
