@@ -46,7 +46,7 @@ const sidebars: SidebarsConfig = {
           label: 'Backend',
           collapsed: false,
           items: [
-            {type: 'doc', id: 'README', label: 'Overview'},
+            {type: 'doc', id: 'index', label: 'Overview'},
           ],
         },
       ],
